@@ -1,0 +1,17 @@
+;;; Problem1_2
+(defvar rlst '())
+(defvar c "")
+(defun palindrome (llst)
+	(setq rlst (reverse llst))
+	(setq c "palindrome")
+	(loop for i from 1 to (/(length llst)2)
+		if (not(equal(car llst)(car rlst))) 
+		do (setq c "not palindrome")
+		(setq llst (cdr llst))
+		(setq rlst (cdr rlst))
+  	)
+  	(write c)
+  	(format t "~%")
+)
+
+(palindrome (read))
